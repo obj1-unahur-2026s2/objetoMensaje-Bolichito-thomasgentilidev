@@ -1,0 +1,42 @@
+import bolichito.*
+import cosas.*
+import personas.*
+
+ 
+test "test de Rosa"{
+    assert.that(rosa.leGusta(pelotaParda))
+    placaDeCobre.colorNuevo(rojo)
+    placaDeCobre.nuevoPeso(3500)
+    assert.that(!rosa.leGusta(placaDeCobre))
+}   
+
+test "estefania"{
+    placaDeCobre.colorNuevo(rojo)
+    placaDeCobre.nuevoPeso(1000)
+
+    assert.that(estefania.leGusta(placaDeCobre))
+    assert.that(!estefania.leGusta(pelotaParda))
+    assert.that(!estefania.leGusta(muniecoCeleste))
+}
+
+test "Luisa"{
+    assert.that(!luisa.leGusta(remeraRoja))
+    assert.that(luisa.leGusta(muniecoCeleste))
+}
+
+test "Juan"{
+    assert.that(juan.leGusta(pelotaParda))
+    assert.that(!juan.leGusta(bibliotecaVerde))
+}
+
+test "bolichito"{
+    bolichito.nuevoObjEnVidriera(pelotaParda)
+    bolichito.nuevoObjEnMostrador(bibliotecaVerde)
+
+    assert.that(!bolichito.esMonocromatico())
+    assert.that(!bolichito.esBrillante())
+    assert.that(bolichito.puedeMejorar())
+    assert.that(!bolichito.estaEquilibrado())
+    assert.that(bolichito.puedeOfrecerAlgoA(juan))
+    assert.that(!bolichito.puedeOfrecerAlgoA(luisa))
+}
